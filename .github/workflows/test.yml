@@ -13,24 +13,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup TeX Live
+      - name: Set up TeX Live
         uses: xu-cheng/texlive-action@v2
         with:
-          texlive-version: 'latest'  # Changed to latest
-          texlive-scheme: 'full'    # Changed from medium to full to ensure all packages
-          cache: true               # Enable caching for faster runs
+          texlive-version: '2023'
+          texlive-scheme: 'medium'
 
       - name: Compile English Resume
         run: |
-          cd $GITHUB_WORKSPACE
           pdflatex -interaction=nonstopmode -output-directory=./ resume_en.tex
-          pdflatex -interaction=nonstopmode -output-directory=./ resume_en.tex
+          pdflatex -interaction=nonstopmode -output-directory=./ resume_en.tex # Run twice for proper references
 
       - name: Compile Spanish Resume
         run: |
-          cd $GITHUB_WORKSPACE
           pdflatex -interaction=nonstopmode -output-directory=./ resume_es.tex
-          pdflatex -interaction=nonstopmode -output-directory=./ resume_es.tex
+          pdflatex -interaction=nonstopmode -output-directory=./ resume_es.tex # Run twice for proper references
 
       - name: Upload PDF artifacts
         uses: actions/upload-artifact@v4
