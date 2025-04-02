@@ -6,18 +6,25 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
+
       - name: Compile LaTeX english
         uses: xu-cheng/latex-action@v3
         with:
           root_file: resume_en.tex
+
+      - name: Upload English PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume_en.pdf  # Individual name for English PDF
+          path: resume_en.pdf  # Single file
+
       - name: Compile LaTeX spanish
         uses: xu-cheng/latex-action@v3
         with:
           root_file: resume_es.tex
-      - name: Upload PDF file
+
+      - name: Upload Spanish PDF
         uses: actions/upload-artifact@v4
         with:
-          name: PDF
-          path: |
-            resume_en.pdf
-            resume_es.pdf
+          name: resume_es.pdf  # Individual name for Spanish PDF
+          path: resume_es.pdf  # Single file
