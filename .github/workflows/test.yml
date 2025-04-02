@@ -1,38 +1,17 @@
-name: Compile LaTeX Resumes
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+name: Build LaTeX document
+on: [push]
 jobs:
-  build:
+  build_latex:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Set up Git repository
         uses: actions/checkout@v4
-
-      - name: Set up TeX Live
-        uses: xu-cheng/texlive-action@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
         with:
-          texlive-version: '2023'
-          texlive-scheme: 'medium'
-
-      - name: Compile English Resume
-        run: |
-          pdflatex -interaction=nonstopmode -output-directory=./ resume_en.tex
-          pdflatex -interaction=nonstopmode -output-directory=./ resume_en.tex # Run twice for proper references
-
-      - name: Compile Spanish Resume
-        run: |
-          pdflatex -interaction=nonstopmode -output-directory=./ resume_es.tex
-          pdflatex -interaction=nonstopmode -output-directory=./ resume_es.tex # Run twice for proper references
-
-      - name: Upload PDF artifacts
+          root_file: resume_en.tex
+      - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
-          name: resumes
-          path: |
-            resume_en.pdf
-            resume_es.pdf
+          name: PDF
+          path: simon.pdf
