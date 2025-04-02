@@ -47,3 +47,14 @@ jobs:
             git commit -m "Auto-update PDFs [skip ci]"
             git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
           fi
+      - name: Prepare PDFs for GitHub Pages
+        run: |
+          mkdir -p docs  # Create a 'docs' folder
+          cp *.pdf docs/ # Copy PDFs into it
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs  # Publish the 'docs' folder
+          keep_files: true     # Preserve existing files
