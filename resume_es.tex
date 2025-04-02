@@ -1,0 +1,69 @@
+\documentclass{resume}
+\usepackage[hidelinks]{hyperref}
+\usepackage[spanish]{babel} % Add Spanish language support
+\usepackage{lipsum}
+
+\name{Simón Clemente}{Ingeniero de Software}
+
+\contact{\href{tel:+58-424-367-5525}{\textbf{+58-424-367-5525}}}
+\contact{\href{https://github.com/simoncra}{\textbf{github.com/simoncra}}}
+\contact{\href{mailto:simonct3ch@gmail.com}{\textbf{simonct3ch@gmail.com}}}
+\contact{\href{https://www.simonctech.com}{\textbf{simonctech.com}}}
+\contact{\href{https://linkedin.com/in/simonctech}{\textbf{linkedin.com/in/simonctech}}}
+
+\begin{document}
+\makeheader
+
+\begin{ResumeSection}{habilidades}
+    \newcommand{\skill}[2]{\textbf{#1} - #2}
+    \begin{ResumeSubsection}{org=Ingeniería}
+        \begin{itemize}
+            \item \skill{Lenguajes}{Javascript (node.js), Golang}
+            \item \skill{Ingeniería de Datos}{SQL(PostgreSQL,SQLite), NoSQL(mongoDB, Redis)}
+            \item \skill{Desarrollo Web Frontend}{javascript, react.js, HTML, CSS, astro.js, vue.js}
+            \item \skill{Infraestructura}{Entornos basados en contenedores, Proveedores de nube incluyendo AWS}
+            \item \skill{Herramientas}{Git, terminal, Neovim, docker}
+        \end{itemize}
+    \end{ResumeSubsection}
+    \begin{ResumeSubsection}{org=Generales}
+        \begin{itemize}
+            \item \skill{Idiomas}{Español nativo, inglés fluido, francés básico}
+            \item \skill{Metodologías}{Kanban, SCRUM}
+        \end{itemize}
+    \end{ResumeSubsection}
+\end{ResumeSection}
+
+\begin{ResumeSection}{experiencia}
+    \begin{ResumeSubsection}{org=PagoChinchin,location={Caracas, Venezuela},position={\textbf{Desarrollador Backend} - tecnologías: \textbf{Node.js, PostgreSQL, mongoDB, RESTful, microservicios}},duration=2021.05-2025.02}
+        \begin{itemize}
+            \item Contribuí al diseño e implementación de un microservicio responsable de la creación y emisión de tarjetas prepago en dólares gracias a una alianza estratégica con Mastercard (a través de un banco nacional).
+            \item Simplifiqué el proceso de onboarding mediante la creación de cuentas bancarias para individuos, reduciendo el tiempo requerido de días a minutos mediante la integración de APIs bancarias junto con la inclusión de afiliación Pago Móvil (sistema de pagos instantáneos en Venezuela, equivalente a Zelle) en bancos asociados.
+            \item Mejoré la eficiencia operativa reduciendo comisiones por transacciones. Esto se logró mediante la refactorización del microservicio responsable de pagos básicos (teléfono, internet, electricidad) y el cambio a un nuevo proveedor, lo que mejoró la rentabilidad y experiencia de usuario.
+            \item Contribuí a la expansión de la pasarela de pagos de la plataforma, integrada en grandes empresas (deliveryHero, mercadolibre) para procesar pagos locales, añadiendo nuevos métodos de pago a su lógica y manteniendo los existentes.
+        \end{itemize}
+    \end{ResumeSubsection}
+    \begin{ResumeSubsection}{org={Autoomation Group},position={Especialista en IoT - tecnologías: \textbf{ESP32, node-red, influxDB}},duration={2019.10-2020.02}}
+        \begin{itemize}
+            \item Incrementé la concienciación sobre el consumo de agua en hogares mediante el desarrollo de un sistema de monitoreo y gestión para tanques de suministro residencial.
+        \end{itemize}
+    \end{ResumeSubsection}
+    
+    \begin{ResumeSubsection}{org=EXDI consulting,location={remoto,Venezuela},position={Desarrollador Fullstack - tecnologías: \textbf{Node.js, bluetoothLE, vue.js}},duration={2019.01-2020.07}}
+        \begin{itemize}
+            \item Desarrollé un sistema de localización de objetos en interiores usando etiquetas beacon, permitiendo a los usuarios encontrar objetos perdidos en áreas donde el GPS no funciona. Esta solución redujo significativamente el tiempo de búsqueda de objetos valiosos.
+        \end{itemize}
+    \end{ResumeSubsection}
+\end{ResumeSection}
+
+\begin{ResumeSection}{educación}
+    \begin{ResumeSubsection}{org={U.N.E.F.A},position={Ingeniería Electrónica},duration={2012.10-2017.11}}
+    \end{ResumeSubsection}
+\end{ResumeSection}
+
+\begin{ResumeSection}{proyectos}
+        \begin{itemize}
+        \item Desarrollé mi portafolio usando astro.js y vercel, y lo publiqué en dominio público\hfill\em{{\href{https://www.simonctech.com}{simonctech.com}}}
+    \end{itemize}
+\end{ResumeSection}
+
+\end{document}

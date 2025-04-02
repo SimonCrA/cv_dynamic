@@ -1,0 +1,69 @@
+\documentclass{resume}
+\usepackage[hidelinks]{hyperref}
+\usepackage{lipsum}
+
+\name{Simon Clemente}{Software Engineer}
+
+\contact{\href{tel:+58-424-367-5525}{\textbf{+58-424-367-5525}}}
+\contact{\href{https://github.com/simoncra}{\textbf{github.com/simoncra}}}
+\contact{\href{mailto:simonct3ch@gmail.com}{\textbf{simonct3ch@gmail.com}}}
+\contact{\href{https://www.simonctech.com}{\textbf{simonctech.com}}}
+\contact{\href{https://linkedin.com/in/simonctech}{\textbf{linkedin.com/in/simonctech}}}
+
+\begin{document}
+\makeheader
+
+\begin{ResumeSection}{skills}
+    \newcommand{\skill}[2]{\textbf{#1} - #2}
+    \begin{ResumeSubsection}{org=Engineering}
+        \begin{itemize}
+            \item \skill{Languages}{Javascript (node.js), Golang}
+            \item \skill{Data Engineering}{SQL(PostgreSQL,SQLite), NoSQL(mongoDB, Redis)}
+            \item \skill{Web Client Development}{javascript, react.js, HTML, CSS, astro.js, vue.js}
+            \item \skill{Infrasructure}{Container based environments, Cloud service providers including AWS}
+            \item \skill{Tools}{Git, terminal, Neovim, docker}
+        \end{itemize}
+    \end{ResumeSubsection}
+    \begin{ResumeSubsection}{org=General}
+        \begin{itemize}
+            \item \skill{Languages}{Spanish as mother tongue, fluent English, entry-level French}
+            \item \skill{Methodology}{Kanban, SCRUM}
+        \end{itemize}
+    \end{ResumeSubsection}
+\end{ResumeSection}
+
+\begin{ResumeSection}{experience}
+    \begin{ResumeSubsection}{org=PagoChinchin,location={Caracas, Venezuela},position={\textbf{Backend Developer} - stack: \textbf{Node.js, PostgreSQL, mongoDB, RESTful, microservices}},duration=2021.05-2025.02}
+        \begin{itemize}
+            \item I contributed to the design and implementation of a microservice responsible for the creation and issuance of prepaid dollar cards thanks to a strategic partnership with Mastercard (through a nation bank).
+            \item I simplified the onboarding process by creating bank accounts for individuals, reducing the required time from days to minutes through the integration of banking APIs along with the inclusion of Pago Móvil (an instant payment system in Venezuela, equivalent to Zelle) affiliation in partner banks.
+            \item I improved operational efficiency by reducing transaction fees. This was achieved by refactoring the microservice responsible for basic payments (phone, internet, electricity) and changing to a new provider, which improved profitability and user experience.
+            \item I contributed to the expansion of the platform's payment gateway which is integrated in big companies (deliveryHero, mercadolibre) to process local payments, adding new payment methods to its logic, and also maintaining the existing payments methods. 
+        \end{itemize}
+    \end{ResumeSubsection}
+    \begin{ResumeSubsection}{org={Autoomation Group},position={IoT specialist - stack: \textbf{ESP32, node-red, influxDB}},duration={2019.10-2020.02}}
+        \begin{itemize}
+            \item I increased user awareness of household water consumption by developing a monitoring and management system for residential water supply tanks.
+        \end{itemize}
+    \end{ResumeSubsection}
+    
+    \begin{ResumeSubsection}{org=EXDI consulting,location={remote,Venezuela},position={Fullstack Developer - stack: \textbf{Node.js, bluetoothLE, vue.js}},duration={2019.01-2020.07}}
+        \begin{itemize}
+            \item I developed an indoor object tracking system using beacon tags, enabling users to locate lost items in areas where GPS cannot operate. This solution significantly reduced the time it took to search for valuable objects.
+        \end{itemize}
+    \end{ResumeSubsection}
+\end{ResumeSection}
+
+\begin{ResumeSection}{education}
+    \begin{ResumeSubsection}{org={U.N.E.F.A},position={Bachelor of Electronics Engineering},duration={2012.10-2017.11}}
+    \end{ResumeSubsection}
+\end{ResumeSection}
+
+\begin{ResumeSection}{projects}
+        \begin{itemize}
+        \item Developed my portfolio using astro.js and vercel, and published it to the public domain\hfill\em{{\href{https://www.simonctech.com}{simonctech.com}}}
+    \end{itemize}
+\end{ResumeSection}
+
+\end{document}
+
