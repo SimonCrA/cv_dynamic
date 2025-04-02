@@ -28,13 +28,22 @@ jobs:
         with:
           name: resume_es.pdf  # Individual name for Spanish PDF
           path: resume_es.pdf  # Single file
-      - name: Commit PDFs to repository
+      - name: Commit PDFs
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git fetch
+          # Configure Git (name/email can be anything)
+          git config --global user.name "PDF Updater Bot"
+          git config --global user.email "pdf-bot@example.com"
+
+          # Switch to the target branch (e.g., main or gh-pages)
           git checkout main
-          git add *.pdf
-          git commit -m "Auto-generated PDFs [skip ci]"
-          git push
+
+          # Add files explicitly (avoid wildcards)
+          git add resume_en.pdf resume_es.pdf
+
+          # Commit only if changes exist
+          if git diff-index --quiet HEAD --; then
+            echo "No changes to commit."
+          else
+            git commit -m "Auto-update PDFs [skip ci]"
+            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
+          fi
