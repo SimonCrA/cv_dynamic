@@ -31,7 +31,7 @@
 
 \newcommand{\company}[1]{\renewcommand{\@company}{#1}}
 \newcommand{\position}[1]{\renewcommand{\@position}{#1}}
-\newcommand{\date}[1]{\renewcommand{\@date}{#1}}
+\renewcommand{\date}[1]{\renewcommand{\@date}{#1}}
 
 % Header
 \newcommand{\makeheader}{
