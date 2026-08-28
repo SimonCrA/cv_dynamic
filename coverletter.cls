@@ -4,6 +4,7 @@
 \LoadClass[12pt,a4paper]{article}
 \usepackage{times}
 \usepackage{enumitem}
+\usepackage{xcolor}
 \usepackage[top=2cm,bottom=2cm,right=2.5cm,left=2.5cm]{geometry}
 
 \setlength{\parindent}{0em}
@@ -32,33 +33,38 @@
 \newcommand{\position}[1]{\renewcommand{\@position}{#1}}
 \renewcommand{\date}[1]{\def\@date{#1}}
 
-% Header
+% Header - Left aligned name with right-aligned contact
 \newcommand{\makeheader}{
-    \begin{minipage}[t]{\textwidth}
-        \centering
-        {\huge\bfseries \@name} \\
-        {\large\normalfont \@jobtitle} \\
-        \vspace{0.5em}
-        {\small \@email ~|~ \@phone ~|~ \@linkedin ~|~ \@portfolio}
+    \noindent
+    \begin{minipage}[t]{0.6\textwidth}
+        {\LARGE\bfseries \@name} \\
+        \vspace{0.3em}
+        {\large\color{darkgray} \@jobtitle}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.38\textwidth}
+        \raggedleft
+        {\small \@email} \\
+        {\small \@phone} \\
+        {\small \@linkedin} \\
+        {\small \@portfolio}
     \end{minipage}
+    \vspace{1em}
+    \hrule
+    \vspace{1em}
 }
 
 % Date and company info
 \newcommand{\makecompanyinfo}{
-    \vspace{1em}
-    \@date \\
-    \vspace{0.5em}
-    Hiring Manager \\
-    \@company
-    \vspace{1em}
+    \@date
+    
+    \vspace{1.5em}
+    Dear Hiring Manager,
 }
 
-% Opening
+% Opening paragraph
 \newcommand{\opening}[1]{
     \vspace{1em}
-    Dear Hiring Manager,
-    \vspace{1em}
-    
     #1
 }
 
@@ -76,8 +82,8 @@
     \vspace{2em}
     Sincerely,
     
-    \vspace{2em}
-    \@name
+    \vspace{2.5em}
+    {\bfseries \@name}
 }
 
 \endinput
