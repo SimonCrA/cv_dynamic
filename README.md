@@ -37,4 +37,3 @@ For job applications, create a branch with the naming convention `cv-<company>-<
 ---
 
 **Note**: Replace `yourusername/yourrepo` with your actual GitHub username and repository name (e.g., `johndoe/resumes`).
-# Trigger CI
