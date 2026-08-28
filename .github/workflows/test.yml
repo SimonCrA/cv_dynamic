@@ -28,6 +28,29 @@ jobs:
         with:
           name: resume_es.pdf  # Individual name for Spanish PDF
           path: resume_es.pdf  # Single file
+
+      - name: Compile English cover letter
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: coverletter_en.tex
+
+      - name: Upload English cover letter PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverletter_en.pdf
+          path: coverletter_en.pdf
+
+      - name: Compile Spanish cover letter
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: coverletter_es.tex
+
+      - name: Upload Spanish cover letter PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverletter_es.pdf
+          path: coverletter_es.pdf
+
       - name: Commit PDFs
         run: |
           # Configure Git (name/email can be anything)
@@ -42,7 +65,7 @@ jobs:
           git checkout $BRANCH_NAME
 
           # Add files explicitly (avoid wildcards)
-          git add resume_en.pdf resume_es.pdf
+          git add resume_en.pdf resume_es.pdf coverletter_en.pdf coverletter_es.pdf
 
           # Commit only if changes exist
           if git diff-index --quiet HEAD --; then
