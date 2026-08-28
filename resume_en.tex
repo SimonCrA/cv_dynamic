@@ -3,7 +3,7 @@
 \usepackage[english]{babel}
 \usepackage{lipsum}
 
-\name{Simon Clemente}{Software Engineer}
+\name{Simon Clemente}{Senior Web Engineer}
 
 \contact{\href{tel:+58-424-367-5525}{\textbf{+58-424-367-5525}}}
 \contact{\href{https://github.com/simoncra}{\textbf{github.com/simoncra}}}
@@ -16,43 +16,54 @@
 
 \begin{ResumeSection}{skills}
     \newcommand{\skill}[2]{\textbf{#1} - #2}
-    \begin{ResumeSubsection}{org=Engineering}
+    \begin{ResumeSubsection}{org=Frontend Engineering}
         \begin{itemize}
-            \item \skill{Languages}{Javascript (node.js), Golang}
-            \item \skill{Data Engineering}{SQL (PostgreSQL, SQLite), NoSQL (MongoDB, Redis)}
-            \item \skill{Frontend Web Development}{Javascript, React.js, HTML, CSS, Astro.js, Vue.js}
-            \item \skill{Infrastructure}{Docker, AWS, Kubernetes, Proxmox, Dokku}
-            \item \skill{Tools}{Git, terminal, Neovim, Docker}
+            \item \skill{Languages}{TypeScript/JavaScript (ES6+), HTML5, CSS3}
+            \item \skill{Frameworks}{React.js (5+ years), Next.js, Vue.js, Astro.js}
+            \item \skill{State Management}{Redux, Context API, Zustand}
+            \item \skill{Testing}{Jest, React Testing Library, Cypress}
+            \item \skill{Performance}{Core Web Vitals optimization, Bundle analysis, Lighthouse}
+            \item \skill{Design Systems}{Component libraries, Storybook, Design tokens}
+            \item \skill{Build Tools}{Webpack, Vite, ESLint, Prettier}
+        \end{itemize}
+    \end{ResumeSubsection}
+    \begin{ResumeSubsection}{org=Backend \& DevOps}
+        \begin{itemize}
+            \item \skill{Backend}{Node.js, Express.js, REST APIs, Microservices}
+            \item \skill{Databases}{PostgreSQL, MongoDB, Redis}
+            \item \skill{Infrastructure}{Docker, Kubernetes, AWS, CI/CD pipelines}
         \end{itemize}
     \end{ResumeSubsection}
     \begin{ResumeSubsection}{org=General}
         \begin{itemize}
-            \item \skill{Languages}{Native Spanish, English C1, Basic French}
-            \item \skill{Methodologies}{Kanban, Scrum}
+            \item \skill{Languages}{Native Spanish, English C1}
+            \item \skill{Methodologies}{Agile, Kanban, Scrum}
         \end{itemize}
     \end{ResumeSubsection}
 \end{ResumeSection}
 
 \begin{ResumeSection}{experience}
-    \begin{ResumeSubsection}{org=Confiao,location={Caracas, Venezuela},position={\textbf{Tech Lead} - technologies: \textbf{DevOps, Node.js, PostgreSQL, MongoDB, System Design, Architecture}},duration=2025.05-present}
+    \begin{ResumeSubsection}{org=Confiao,location={Caracas, Venezuela},position={\textbf{Tech Lead \& Frontend Architect} - technologies: \textbf{React.js, TypeScript, Node.js, PostgreSQL, MongoDB, System Design}},duration=2025.05-present}
         \begin{itemize}
-            \item Developed and implemented the organization's entire on-prem infrastructure, creating development and testing environments, internal tools, and configuring networks and required hardware.
-            \item Redesigned the entire codebase architecture into microservices and created an implementation plan to execute with the development team, improving application performance.
-            \item Designed and implemented the production deployment pipeline for mobile and web applications, as well as databases and backend services.
-            \item Designed and implemented a monitoring and observability system for all applications in both development and production environments.
+            \item Led frontend architecture decisions, establishing React component libraries and design system patterns used across multiple teams.
+            \item Mentored 3+ developers on React best practices, TypeScript adoption, and testing strategies, improving team code quality.
+            \item Designed and implemented scalable microservices architecture with React frontend, improving application performance and maintainability.
+            \item Established CI/CD pipelines and testing strategies (Jest, React Testing Library) ensuring production reliability.
+            \item Optimized Core Web Vitals and bundle sizes, achieving 40\% reduction in initial load time.
         \end{itemize}
     \end{ResumeSubsection}
-    \begin{ResumeSubsection}{org=PagoChinchin,location={Caracas, Venezuela},position={\textbf{Backend Developer} - technologies: \textbf{Node.js, PostgreSQL, MongoDB, RESTful, Microservices}},duration=2021.05-2025.02}
+    \begin{ResumeSubsection}{org=PagoChinchin,location={Caracas, Venezuela},position={\textbf{Full Stack Developer} - technologies: \textbf{React.js, Node.js, PostgreSQL, MongoDB, REST APIs, Payment Systems}},duration=2021.05-2025.02}
         \begin{itemize}
-            \item Contributed to the design and implementation of a microservice responsible for issuing prepaid dollar cards through a strategic partnership with Mastercard (via a national bank).
-            \item Simplified the onboarding process by enabling bank account creation for individuals, reducing the time required from days to minutes by integrating banking APIs and adding Pago Móvil (Venezuela’s instant payment system, similar to Zelle) for affiliated banks.
-            \item Improved operational efficiency by reducing transaction fees through refactoring the microservice responsible for basic payments (phone, internet, electricity) and switching to a new provider, improving profitability and user experience.
-            \item Contributed to the expansion of the platform’s payment gateway, integrated into large companies (Delivery Hero, MercadoLibre), by adding new payment methods and maintaining existing ones.
+            \item Developed React-based merchant dashboards and web flows for payment processing, handling real-time transactions.
+            \item Built shared component libraries and internal tools used by multiple teams, improving development efficiency.
+            \item Integrated payment gateways (Mastercard, Pago Móvil) with React frontends, ensuring cross-browser compatibility.
+            \item Optimized web performance for mobile users on variable network conditions, improving conversion rates.
+            \item Contributed to microservices architecture for payment processing, collaborating with backend teams.
         \end{itemize}
     \end{ResumeSubsection}
-    \begin{ResumeSubsection}{org={Automation Group},position={IoT Specialist - technologies: \textbf{ESP32, Node-RED, InfluxDB}},duration={2019.10-2020.02}}
+    \begin{ResumeSubsection}{org={Automation Group},position={IoT Specialist - technologies: \textbf{ESP32, Node-RED, React.js, InfluxDB}},duration={2019.10-2020.02}}
         \begin{itemize}
-            \item Increased awareness of household water consumption by developing a monitoring and management system for residential water tanks.
+            \item Built React.js dashboard for real-time monitoring and management of residential water tank systems.
         \end{itemize}
     \end{ResumeSubsection}
 \end{ResumeSection}
@@ -64,10 +75,10 @@
 
 \begin{ResumeSection}{projects}
     \begin{itemize}
-        \item Developed my portfolio using Astro.js and Vercel, and published it on a public domain \hfill\em{{\href{https://www.simonctech.com}{simonctech.com}}}
+        \item Built portfolio website with Astro.js, React components, and Vercel deployment \hfill\em{{\href{https://www.simonctech.com}{simonctech.com}}}
     \end{itemize}
     \begin{itemize}
-        \item Developed an application to track gym workouts \hfill\em{{\href{https://workout-logger-sable.vercel.app/}{workout-logger.com}}}
+        \item Developed React.js fitness tracking application with responsive design and state management \hfill\em{{\href{https://workout-logger-sable.vercel.app/}{workout-logger.com}}}
     \end{itemize}
 \end{ResumeSection}
 

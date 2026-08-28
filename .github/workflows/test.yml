@@ -34,8 +34,12 @@ jobs:
           git config --global user.name "PDF Updater Bot"
           git config --global user.email "pdf-bot@example.com"
 
-          # Switch to the target branch (e.g., main or gh-pages)
-          git checkout main
+          # Get the current branch name
+          BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+          echo "Current branch: $BRANCH_NAME"
+
+          # Switch to the target branch
+          git checkout $BRANCH_NAME
 
           # Add files explicitly (avoid wildcards)
           git add resume_en.pdf resume_es.pdf
@@ -45,7 +49,7 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "Auto-update PDFs [skip ci]"
-            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
+            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git $BRANCH_NAME
           fi
       # - name: Prepare PDFs for GitHub Pages
       #   run: |
