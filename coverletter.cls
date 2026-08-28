@@ -11,14 +11,14 @@
 
 % Contact information
 \newcommand{\@name}{}
-\newcommand{\@title}{}
+\newcommand{\@jobtitle}{}
 \newcommand{\@email}{}
 \newcommand{\@phone}{}
 \newcommand{\@linkedin}{}
 \newcommand{\@portfolio}{}
 
 \newcommand{\name}[1]{\renewcommand{\@name}{#1}}
-\newcommand{\title}[1]{\renewcommand{\@title}{#1}}
+\newcommand{\jobtitle}[1]{\renewcommand{\@jobtitle}{#1}}
 \newcommand{\email}[1]{\renewcommand{\@email}{#1}}
 \newcommand{\phone}[1]{\renewcommand{\@phone}{#1}}
 \newcommand{\linkedin}[1]{\renewcommand{\@linkedin}{#1}}
@@ -38,7 +38,7 @@
     \begin{minipage}[t]{\textwidth}
         \centering
         {\huge\bfseries \@name} \\
-        {\large\normalfont \@title} \\
+        {\large\normalfont \@jobtitle} \\
         \vspace{0.5em}
         {\small \@email ~|~ \@phone ~|~ \@linkedin ~|~ \@portfolio}
     \end{minipage}
