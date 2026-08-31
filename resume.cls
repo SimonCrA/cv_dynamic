@@ -1,17 +1,27 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{resume}[2014/08/16 Resume class]
+\ProvidesClass{resume}[2024/08/31 Modern Resume Class]
 
 \LoadClass[12pt,a4paper]{article}
-\usepackage{times}
+\usepackage{xcolor}
 \usepackage{enumitem}
-\usepackage[top=0.63cm,bottom=0.63cm,right=1.1cm,left=1.1cm]{geometry}
+\usepackage[top=2cm,bottom=2cm,right=2cm,left=2cm]{geometry}
+\usepackage{hyperref}
+
+\definecolor{headercolor}{HTML}{1a1a2e}
+\definecolor{accentcolor}{HTML}{1976d2}
 
 \setlength{\parindent}{0em}
 \setlist{nosep,left=0em,labelindent=5pt,labelwidth=1.25em}
 
-% Inside resume.cls
-\newcommand{\@name}{} % Name part
-\newcommand{\@cargo}{} % Title part
+\pagestyle{empty}
+\hypersetup{
+    colorlinks=false,
+    pdfauthor={Simon Clemente},
+    pdftitle={Resume}
+}
+
+\newcommand{\@name}{}
+\newcommand{\@cargo}{}
 
 \newcommand{\name}[2]{
     \renewcommand{\@name}{#1}
@@ -19,51 +29,45 @@
 }
 
 \newcommand{\makename}{
-    \begin{center}
-        {\huge\bfseries \@name} \\ % Name in bold and large
-        {\large\normalfont \@cargo} % Title in normal font
-    \end{center}
-}
-
-\def \makeheader {\makebox[\textwidth]{\hfill\makename\hfill\makecontact}}
-
-% Fix \makeheader to prevent clashes
-\renewcommand{\makeheader}{
-    \noindent
-    \makename % Centered name + title (in minipage)
+    \begin{minipage}[t]{0.65\textwidth}
+        {\huge\bfseries \color{white} \@name} \\ 
+        {\large\normalfont \@cargo}
+    \end{minipage}
     \hfill
-    \makecontact % Right-aligned contact info
+    \begin{minipage}[t]{0.3\textwidth}
+        \raggedleft
+        {\large\color{accentcolor} \textbf{Simon Clemente} \\ \small \href{mailto:simonct3ch@gmail.com}{simonct3ch@gmail.com} \\ \small \href{https://github.com/simoncra}{github.com/simoncra} \\ \small \href{https://linkedin.com/in/simonctech}{linkedin.com/in/simonctech}}
+    \end{minipage}
 }
 
 \newcommand*\@contacts{}
 \newcommand*\contact[1]{
-    \ifx\features\empty {\def\features{\par#1}}
-    \else {\g@addto@macro\@contacts{\par#1}} % append \contact to \@contacts
-    \fi
+    \g@addto@macro\@contacts{\par#1}
 }
 \def \makecontact{\llap{\parbox{\textwidth}{\footnotesize\raggedleft\@contacts}}}
 
 \renewcommand{\makeheader}{
     \noindent
-    \begin{minipage}[t]{\textwidth}
-        \centering
-        \makename % Centered name + title
-    \end{minipage}%
-    \hfill
-    \makecontact % Right-aligned contact info
+    {\color{headercolor}\rule{\textwidth}{0.8pt}}
+    \makename
+    {\color{headercolor}\rule{\textwidth}{0.8pt}}
 }
 
 \newenvironment{ResumeSection}[1]{
-    \MakeUppercase{\bf #1}
-    \smallskip\hrule\medskip
+    \begin{center}
+        {\large\color{headercolor}\MakeUppercase{\bf #1}}
+    \end{center}
+    \vspace{0.5em}
+    {\color{headercolor}\rule{\linewidth}{1pt}}
+    \vspace{0.5em}
 }{
-    \bigskip
+    \vspace{1em}
 }
 
 \define@key{subsection}{org}{\def\subsection@org{#1}}
-\define@key{subsection}{location}{\def\subsection@location{#1}}
-\define@key{subsection}{position}{\def\subsection@position{#1}}
-\define@key{subsection}{duration}{\def\subsection@duration{#1}}
+\define@key{subsection}{location}{\defsubsection@location{#1}}
+\define@key{subsection}{position}{\defsubsection@position{#1}}
+\define@key{subsection}{duration}{\defsubsection@duration{#1}}
 \newenvironment{ResumeSubsection}[1]{
     \setkeys{subsection}{org=,location=,position=,duration=}
     \setkeys{subsection}{#1}
@@ -75,4 +79,3 @@
 }{
     \bigskip
 }
-
